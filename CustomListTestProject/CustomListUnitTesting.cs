@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CustomClassList;
+using CustomClassListT;
 
 namespace CustomListTestProject
 {
@@ -20,7 +20,7 @@ namespace CustomListTestProject
             //Arrange
             CustomList<int> customList = new CustomList<int>();
             
-            int value1 = 20;
+            int value1 = 1;
             int expected = 1;
             int actual;
 
@@ -40,9 +40,9 @@ namespace CustomListTestProject
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
-            int value1 = 20;
-            int value2 = 10;
 
+            int value1 = 1;
+            int value2 = 2;
             int expected = 2;
             int actual;
 
@@ -128,10 +128,8 @@ namespace CustomListTestProject
         public void Add_TwoNumbes_OneIndexShouldBeTwo()
         {
             //Arrange
-            CustomList<int> customList = new CustomList<int>();
-            customList.Add(1);
-            customList.Add(2);
-            customList.Add(3);
+            CustomList<int> myList = new CustomList<int>();
+           
             int value1 = 1;
             int value2 = 2;
             int expected = 2;
@@ -157,19 +155,19 @@ namespace CustomListTestProject
         public void Remove_OneNumberFromList_ExpectCountToDecreaseByOne()
         {
             //Arrange
-            CustomList<int> myList = new CustomList<int>();
-            myList.Add(1);
-            myList.Add(2);
-            myList.Add(3);
+            CustomList<int> customList = new CustomList<int>();
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
           
             int value1 = 1;
-            int expected = 0;
+            int expected = 2;
             int actual;
 
 
             //Act
-            myList.Remove(value1);
-            actual = myList.Count;
+            customList.Remove(value1);
+            actual = customList.Count;
 
 
             //Assert
@@ -181,9 +179,9 @@ namespace CustomListTestProject
         public void Remove_OneNumberFromList_Value2ToMoveToIndex0() //need to add.
         {
             //Arrange
-            CustomList<int> myList = new CustomList<int>();
-            myList.Add(1);
-            myList.Add(2);
+            CustomList<int> customList = new CustomList<int>();
+            customList.Add(1);
+            customList.Add(2);
 
             int value1 = 1;
             int value2 = 2;
@@ -205,10 +203,10 @@ namespace CustomListTestProject
         public void Remove_TwoNumbers_ZeroIndexShouldBeThree()
         {
             //Arrange
-            CustomList<int> myList = new CustomList<int>();
-            myList.Add(1);
-            myList.Add(2);
-            myList.Add(3);
+            CustomList<int> customList = new CustomList<int>();
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
           
             int value1 = 1;
             int value2 = 2;

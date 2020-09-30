@@ -55,13 +55,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomClassList\CustomClassList.csproj">
-      <Project>{38db2271-1215-484e-acae-c7ff9543f5f9}</Project>
-      <Name>CustomClassList</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\CustomClassListT\CustomClassListT.csproj">
+      <Project>{397f00b5-d78c-44a2-af72-30e2b4721f2b}</Project>
+      <Name>CustomClassListT</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

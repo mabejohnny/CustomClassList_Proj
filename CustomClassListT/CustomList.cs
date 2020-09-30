@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace CustomClassList
+namespace CustomClassListT
 {
     public class CustomList<T>
     {
@@ -10,7 +12,7 @@ namespace CustomClassList
         public int capacity;
 
         private T[] customList;
-        
+
 
 
         public CustomList()
@@ -19,9 +21,9 @@ namespace CustomClassList
             capacity = 4;
 
             customList = new T[capacity];
-            
+
         }
-     
+
 
         public void Add(T item)
         {
@@ -32,7 +34,8 @@ namespace CustomClassList
 
         public void Remove(T item)
         {
-           
+
+
         }
 
         private void CheckCapacity()
@@ -47,7 +50,7 @@ namespace CustomClassList
             if (capacity == count)
             {
                 customList = new T[capacity *= 2];
-            }  
+            }
         }
 
 
