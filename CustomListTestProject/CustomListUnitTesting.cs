@@ -12,12 +12,7 @@ namespace CustomListTestProject
     public class CustomListUnitTesting
     {
 
-      
-        //make sure my array goes into the safeArray prior to destroying
-        //T[] SafeArray = new T[Capacity]
-
-
-        // ADD:
+        // ADD TESTS:
 
         [TestMethod]
         public void Add_AddOneNumberToList_ExpectCountToIncreaseByOne()
@@ -153,15 +148,16 @@ namespace CustomListTestProject
             Assert.AreEqual(expected, actual);
 
         }
+        
 
-        // REMOVE: 
+
+        // REMOVE TESTS: 
 
         [TestMethod]
         public void Remove_OneNumberFromList_ExpectCountToDecreaseByOne()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
-            //List<int> myList = new List<int>();
             myList.Add(1);
             myList.Add(2);
             myList.Add(3);
@@ -181,10 +177,14 @@ namespace CustomListTestProject
 
         }
 
+        [TestMethod]
         public void Remove_OneNumberFromList_Value2ToMoveToIndex0() //need to add.
         {
             //Arrange
-            CustomList<int> customList = new CustomList<int>();
+            CustomList<int> myList = new CustomList<int>();
+            myList.Add(1);
+            myList.Add(2);
+
             int value1 = 1;
             int value2 = 2;
             int expected = 2;
@@ -199,13 +199,17 @@ namespace CustomListTestProject
             //Assert
             Assert.AreEqual(expected, actual);
 
-
         }
 
+        [TestMethod]
         public void Remove_TwoNumbers_ZeroIndexShouldBeThree()
         {
             //Arrange
-            CustomList<int> customList = new CustomList<int>();
+            CustomList<int> myList = new CustomList<int>();
+            myList.Add(1);
+            myList.Add(2);
+            myList.Add(3);
+          
             int value1 = 1;
             int value2 = 2;
             int value3 = 3;

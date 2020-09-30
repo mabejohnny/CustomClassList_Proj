@@ -10,12 +10,6 @@ namespace CustomClassList
         {
             CustomList<int> customList = new CustomList<int>();
 
-            List<int> customList = new List<int>();
-            customList.Add(1);
-            customList.Add(2);
-            customList.Add(3);
-            
-
 
 
 

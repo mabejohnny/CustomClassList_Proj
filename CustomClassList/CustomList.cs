@@ -32,7 +32,7 @@ namespace CustomClassList
 
         public void Remove(T item)
         {
-
+           
         }
 
         private void CheckCapacity()
