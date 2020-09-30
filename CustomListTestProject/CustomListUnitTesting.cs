@@ -27,7 +27,7 @@ namespace CustomListTestProject
 
             //Act
             customList.Add(value1);
-            actual = customList.Count;
+            actual = customList.count;
 
 
             //Assert
@@ -50,7 +50,7 @@ namespace CustomListTestProject
             //Act
             customList.Add(value1);
             customList.Add(value2);
-            actual = customList.Count;
+            actual = customList.count;
 
 
             //Assert
@@ -70,7 +70,7 @@ namespace CustomListTestProject
 
             //Act
             customList.Add(value1);
-            actual = customList.Capacity;
+            actual = customList.capacity;
 
 
             //Assert
@@ -96,7 +96,7 @@ namespace CustomListTestProject
             customList.Add(value2);
             customList.Add(value3);
             customList.Add(value4);
-            actual = customList.Capacity;
+            actual = customList.capacity;
 
 
             //Assert
@@ -128,7 +128,7 @@ namespace CustomListTestProject
         public void Add_TwoNumbes_OneIndexShouldBeTwo()
         {
             //Arrange
-            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> customList = new CustomList<int>();
            
             int value1 = 1;
             int value2 = 2;
@@ -167,7 +167,7 @@ namespace CustomListTestProject
 
             //Act
             customList.Remove(value1);
-            actual = customList.Count;
+            actual = customList.count;
 
 
             //Assert
