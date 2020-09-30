@@ -11,10 +11,7 @@ namespace CustomListTestProject
     public class CustomListUnitTesting
     {
 
-        //adding to make sure capacity doubles [X]
-        //if i add something at the 0 spot did it end up at the zero spot [0]
-        //if i called .add did the value go into the next indexer
-        //if you set capacity to 4, will it add 
+      
         //make sure my array goes into the safeArray prior to destroying
         //T[] SafeArray = new T[Capacity]
 
@@ -26,6 +23,7 @@ namespace CustomListTestProject
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
+            
             int value1 = 20;
             int expected = 1;
             int actual;
@@ -85,12 +83,14 @@ namespace CustomListTestProject
         }
 
         [TestMethod]
-        public void Add_AddTwoNumbersToList_ExpectCapacityToBeEight()
+        public void Add_AddFourNumbersToList_ExpectCapacityToBeDoubledFromFourToEight()
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
             int value1 = 1;
             int value2 = 2;
+            int value3 = 3;
+            int value4 = 4;
             int expected = 8;
             int actual;
 
@@ -98,6 +98,8 @@ namespace CustomListTestProject
             //Act
             customList.Add(value1);
             customList.Add(value2);
+            customList.Add(value3);
+            customList.Add(value4);
             actual = customList.Capacity;
 
 
@@ -131,6 +133,9 @@ namespace CustomListTestProject
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
             int value1 = 1;
             int value2 = 2;
             int expected = 2;
@@ -148,41 +153,26 @@ namespace CustomListTestProject
 
         }
 
-        [TestMethod]
-        public void Add_OneNumberToList_ListWillBeOverCountAndThrowException()  //Ask Charles to go over testing for exceptions
-        {
-            //Arrange
-            CustomList<int> customList = new CustomList<int>();
-           
-
-
-            //Act
-            customList.Add(value1);
-            customList.Add(value2);
-            actual = customList[1];
-
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-
-        }
-
-
         // REMOVE: 
 
         [TestMethod]
         public void Remove_OneNumberFromList_ExpectCountToDecreaseByOne()
         {
             //Arrange
-            CustomList<int> customList = new CustomList<int>();
+            CustomList<int> myList = new CustomList<int>();
+            //List<int> myList = new List<int>();
+            myList.Add(1);
+            myList.Add(2);
+            myList.Add(3);
+          
             int value1 = 1;
             int expected = 0;
             int actual;
 
 
             //Act
-            customList.Remove(value1);
-            actual = customList.Count;
+            myList.Remove(value1);
+            actual = myList.Count;
 
 
             //Assert
@@ -211,7 +201,7 @@ namespace CustomListTestProject
 
         }
 
-        public void Remove_TwoNumbers_OneIndexShouldBeThree()
+        public void Remove_TwoNumbers_ZeroIndexShouldBeThree()
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
@@ -233,22 +223,7 @@ namespace CustomListTestProject
 
         }
 
-        [TestMethod]
-        public void Remove_OneNumberFromList_ListWillBeUnderCountAndThrowException()  //Ask Charles to go over testing for exceptions
-        {
-            //Arrange
-            CustomList<int> customList = new CustomList<int>();
-
-
-
-            //Act
-           
-
-
-            //Assert
-            
-
-        }
+        
 
 
     }

@@ -9,7 +9,6 @@ namespace CustomClassList
         {
             CustomList<int> thing = new CustomList<int>();
 
-
             List<int> customList = new List<int>();
             customList.Add(1);
             customList.Add(2);

@@ -9,7 +9,8 @@ namespace CustomClassList
         public int count;
         public int capacity;
 
-        private T[] _items;
+        private T[] customList;
+        
 
 
         public CustomList()
@@ -17,16 +18,36 @@ namespace CustomClassList
             count = 0;
             capacity = 4;
 
-            _items = new T[capacity];
-
+            customList = new T[capacity];
+            
         }
      
 
         public void Add(T item)
         {
-            _items[count] = item;
+            customList[count] = item;
             count++;
-            //_items = new T[capacity *= 2];
+
+            //create new T to hold old T while adding items
+            T[] tempList = new T[capacity];
+
+            for (int i = 0; i < customList.Length; i++)
+            {
+                tempList[i] = customList[i];   
+            }
+            customList = tempList;
+        
+
+            //check capacity if count hits capacity, it will double capacity value
+            if(capacity == count)
+            {
+                customList = new T[capacity *= 2];
+
+            }
+            else if(count < 4)
+            {
+                customList = new T[capacity];
+            }
         }
 
 
