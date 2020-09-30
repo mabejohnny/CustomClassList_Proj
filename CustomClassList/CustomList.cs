@@ -27,32 +27,27 @@ namespace CustomClassList
         {
             CheckCapacity();
             customList[count] = item;
+            count++;
+        }
 
-            //create new T to hold old T while adding items
+        public void Remove(T item)
+        {
+
+        }
+
+        private void CheckCapacity()
+        {
             T[] tempList = new T[capacity];
 
             for (int i = 0; i < customList.Length; i++)
             {
-                tempList[i] = customList[i];   
+                tempList[i] = customList[i];
             }
-            count++;
-            customList = tempList;
-        
-        }
 
-        //check capacity if count hits capacity, it will double capacity value
-        public void CheckCapacity()
-        {
             if (capacity == count)
             {
                 customList = new T[capacity *= 2];
-
-            }
-            else if (count < 4)
-            {
-                customList = new T[capacity];
-            }
-
+            }  
         }
 
 

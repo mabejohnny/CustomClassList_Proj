@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CustomClassList;
 
 namespace CustomListTestProject
 {
@@ -180,7 +181,7 @@ namespace CustomListTestProject
 
         }
 
-        public void Remove_OneNumberFromList_Value2ToMoveToIndex0()
+        public void Remove_OneNumberFromList_Value2ToMoveToIndex0() //need to add.
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
