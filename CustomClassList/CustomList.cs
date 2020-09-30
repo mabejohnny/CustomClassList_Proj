@@ -25,8 +25,8 @@ namespace CustomClassList
 
         public void Add(T item)
         {
+            CheckCapacity();
             customList[count] = item;
-            count++;
 
             //create new T to hold old T while adding items
             T[] tempList = new T[capacity];
@@ -35,19 +35,24 @@ namespace CustomClassList
             {
                 tempList[i] = customList[i];   
             }
+            count++;
             customList = tempList;
         
+        }
 
-            //check capacity if count hits capacity, it will double capacity value
-            if(capacity == count)
+        //check capacity if count hits capacity, it will double capacity value
+        public void CheckCapacity()
+        {
+            if (capacity == count)
             {
                 customList = new T[capacity *= 2];
 
             }
-            else if(count < 4)
+            else if (count < 4)
             {
                 customList = new T[capacity];
             }
+
         }
 
 
