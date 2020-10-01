@@ -33,6 +33,31 @@ namespace CustomClassListT
 
         }
 
+        public T this[int i]
+        {
+            
+            get
+            {
+                if(i >= 0 && i <= customList.Length)
+                {
+                    return customList[i]; //bounds were in range, return stored value 
+
+                }
+                
+                
+            }
+            set
+            {
+                if (i >= 0 && i <= customList.Length)
+                {
+                    customList[i] = value; 
+                }
+
+            }
+            
+
+        }
+
 
         public void Add(T item)
         {
@@ -43,7 +68,17 @@ namespace CustomClassListT
 
         public void Remove(T item)
         {
+            for (int i = 0; i < customList.Length; i++)
+            {
+                if(customList[i] == )
+                {
 
+                }
+
+            }
+            customList[Count - 1] = item;
+            count--;
+            CheckCapacity();
 
         }
 
@@ -58,7 +93,11 @@ namespace CustomClassListT
 
             if (capacity == Count)
             {
-                customList = new T[capacity *= 2];
+                customList = new T[capacity *= 2]; //Will double capacity based on count 
+            }
+            else if(capacity > 5)
+            {
+                customList = new T[capacity]; //will bring capacity back to 4 if items are removed and count gets less then 5
             }
         }
 
