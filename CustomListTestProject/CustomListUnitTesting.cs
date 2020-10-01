@@ -86,6 +86,7 @@ namespace CustomListTestProject
             customList.Add(value2);
             customList.Add(value3);
             customList.Add(value4);
+            customList.Add(value4);
             actual = customList.capacity;
 
             //Assert

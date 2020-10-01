@@ -22,9 +22,9 @@ namespace CustomClassListT
 
         public CustomList()
         {
-            customList = new T[capacity];
             count = 0;
             capacity = 4;
+            customList = new T[capacity];
         }
 
         public T this[int i]
@@ -35,7 +35,11 @@ namespace CustomClassListT
                 {
                     return customList[i]; 
                 }
-                throw new ArgumentOutOfRangeException();
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                
             }
             set
             {
@@ -53,20 +57,20 @@ namespace CustomClassListT
         public void Add(T item)
         {
             CheckCapacity();
-            customList[Count] = item;
+            customList[count] = item;
             count++;
         }
 
         public void Remove(T item)
         {
-            for (int i = 0; i < customList.Length; i++)
-            {
-                if(customList[i] == )
-                {
+            //for (int i = 0; i < customList.Length; i++)
+            //{
+                //if(customList[i] == )
+                //{
 
-                }
+                //}
 
-            }
+            //}
             customList[Count - 1] = item;
             count--;
             CheckCapacity();
@@ -86,10 +90,10 @@ namespace CustomClassListT
             {
                 customList = new T[capacity *= 2]; 
             }
-            else if(capacity > 5)
-            {
-                customList = new T[capacity]; 
-            }
+            //else if(capacity > 5)
+            //{
+                //customList = new T[capacity]; 
+            //}
         }
 
     }
