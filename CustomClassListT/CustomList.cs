@@ -43,8 +43,10 @@ namespace CustomClassListT
                     return customList[i]; //bounds were in range, return stored value 
 
                 }
-                
-                
+
+                throw new ArgumentOutOfRangeException();
+
+
             }
             set
             {
@@ -52,6 +54,8 @@ namespace CustomClassListT
                 {
                     customList[i] = value; 
                 }
+
+                throw new ArgumentOutOfRangeException();
 
             }
             
