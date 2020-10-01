@@ -8,10 +8,19 @@ namespace CustomClassListT
 {
     public class CustomList<T>
     {
-        public int count;
-        public int capacity;
 
+        public int capacity;
         private T[] customList;
+        private int count;
+       
+
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
 
 
 
@@ -28,7 +37,7 @@ namespace CustomClassListT
         public void Add(T item)
         {
             CheckCapacity();
-            customList[count] = item;
+            customList[Count] = item;
             count++;
         }
 
@@ -47,7 +56,7 @@ namespace CustomClassListT
                 tempList[i] = customList[i];
             }
 
-            if (capacity == count)
+            if (capacity == Count)
             {
                 customList = new T[capacity *= 2];
             }
