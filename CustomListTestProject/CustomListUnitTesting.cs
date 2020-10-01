@@ -24,15 +24,12 @@ namespace CustomListTestProject
             int expected = 1;
             int actual;
 
-
             //Act
             customList.Add(value1);
-            actual = customList.count;
-
+            actual = customList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
@@ -46,16 +43,13 @@ namespace CustomListTestProject
             int expected = 2;
             int actual;
 
-
             //Act
             customList.Add(value1);
             customList.Add(value2);
-            actual = customList.count;
-
+            actual = customList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
@@ -67,15 +61,12 @@ namespace CustomListTestProject
             int expected = 4;
             int actual;
 
-
             //Act
             customList.Add(value1);
             actual = customList.capacity;
 
-
             //Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
@@ -90,7 +81,6 @@ namespace CustomListTestProject
             int expected = 8;
             int actual;
 
-
             //Act
             customList.Add(value1);
             customList.Add(value2);
@@ -98,10 +88,8 @@ namespace CustomListTestProject
             customList.Add(value4);
             actual = customList.capacity;
 
-
             //Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
@@ -113,15 +101,12 @@ namespace CustomListTestProject
             int expected = 1;
             int actual;
 
-
             //Act
             customList.Add(value1);
             actual = customList[0];
 
-
             //Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
@@ -135,19 +120,15 @@ namespace CustomListTestProject
             int expected = 2;
             int actual;
 
-
             //Act
             customList.Add(value1);
             customList.Add(value2);
             actual = customList[1];
 
-
             //Assert
             Assert.AreEqual(expected, actual);
-
         }
         
-
 
         // REMOVE TESTS: 
 
@@ -164,19 +145,16 @@ namespace CustomListTestProject
             int expected = 2;
             int actual;
 
-
             //Act
             customList.Remove(value1);
-            actual = customList.count;
-
+            actual = customList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
-        public void Remove_OneNumberFromList_Value2ToMoveToIndex0() //need to add.
+        public void Remove_OneNumberFromList_Value2ToMoveToIndex0() 
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
@@ -184,19 +162,15 @@ namespace CustomListTestProject
             customList.Add(2);
 
             int value1 = 1;
-            int value2 = 2;
             int expected = 2;
             int actual;
-
 
             //Act
             customList.Remove(value1);
             actual = customList[0];
 
-
             //Assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
@@ -210,24 +184,16 @@ namespace CustomListTestProject
           
             int value1 = 1;
             int value2 = 2;
-            int value3 = 3;
             int expected = 2;
             int actual;
-
 
             //Act
             customList.Remove(value1);
             customList.Remove(value2);
             actual = customList[1];
 
-
             //Assert
             Assert.AreEqual(expected, actual);
-
         }
-
-        
-
-
     }
 }

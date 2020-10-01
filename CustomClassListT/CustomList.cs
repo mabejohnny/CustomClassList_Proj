@@ -8,12 +8,10 @@ namespace CustomClassListT
 {
     public class CustomList<T>
     {
-
         public int capacity;
         private T[] customList;
         private int count;
        
-
         public int Count
         {
             get
@@ -22,31 +20,22 @@ namespace CustomClassListT
             }
         }
 
-
-
         public CustomList()
         {
+            customList = new T[capacity];
             count = 0;
             capacity = 4;
-
-            customList = new T[capacity];
-
         }
 
         public T this[int i]
-        {
-            
+        {   
             get
             {
                 if(i >= 0 && i <= customList.Length)
                 {
-                    return customList[i]; //bounds were in range, return stored value 
-
+                    return customList[i]; 
                 }
-
                 throw new ArgumentOutOfRangeException();
-
-
             }
             set
             {
@@ -54,14 +43,12 @@ namespace CustomClassListT
                 {
                     customList[i] = value; 
                 }
-
-                throw new ArgumentOutOfRangeException();
-
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
             }
-            
-
         }
-
 
         public void Add(T item)
         {
@@ -97,15 +84,13 @@ namespace CustomClassListT
 
             if (capacity == Count)
             {
-                customList = new T[capacity *= 2]; //Will double capacity based on count 
+                customList = new T[capacity *= 2]; 
             }
             else if(capacity > 5)
             {
-                customList = new T[capacity]; //will bring capacity back to 4 if items are removed and count gets less then 5
+                customList = new T[capacity]; 
             }
         }
-
-
 
     }
 }
