@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CustomClassListT
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable 
     {
         public int capacity;
         private T[] customList;
@@ -88,6 +89,27 @@ namespace CustomClassListT
                 customList = new T[capacity *= 2]; 
             }
 
+        }
+
+        public override string ToString()
+        {
+            string stringToDisplay = "";
+
+            for (int i = 0; i < customList.Length; i++)
+            {
+                stringToDisplay += customList[i]; 
+                
+            }
+            return stringToDisplay;
+
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < customList.Length; i++)
+            {
+                yield return customList[i];
+            }
         }
 
     }

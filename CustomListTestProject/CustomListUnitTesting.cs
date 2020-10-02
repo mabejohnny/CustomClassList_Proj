@@ -196,5 +196,28 @@ namespace CustomListTestProject
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        // Override to string tests:
+
+        [TestMethod]
+        public void ToString_SendInIntList_ReturnString()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
+
+            string expected = "123";
+            string actual;
+
+            //Act
+            actual = customList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+       
     }
 }
