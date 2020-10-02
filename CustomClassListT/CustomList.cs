@@ -95,7 +95,7 @@ namespace CustomClassListT
         {
             string stringToDisplay = "";
 
-            for (int i = 0; i < customList.Length; i++)
+            for (int i = 0; i < customList.Length - 1; i++)
             {
                 stringToDisplay += customList[i]; 
                 

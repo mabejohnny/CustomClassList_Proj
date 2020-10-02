@@ -11,7 +11,6 @@ namespace CustomClassListT
         static void Main(string[] args)
         {
 
-
         }
     }
 }

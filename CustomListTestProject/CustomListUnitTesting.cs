@@ -197,10 +197,10 @@ namespace CustomListTestProject
             Assert.AreEqual(expected, actual);
         }
 
-        // Override to string tests:
+        // ToString tests:
 
         [TestMethod]
-        public void ToString_SendInIntList_ReturnString()
+        public void ToString_SendInIntListOfThree_ReturnStringOfThree()
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
@@ -218,6 +218,24 @@ namespace CustomListTestProject
             Assert.AreEqual(expected, actual);
         }
 
-       
+        [TestMethod]
+        public void ToString_TakeListOfIntRemoveOne_ReturnNewStringWithOneRemoved()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
+
+            string expected = "12";
+            string actual;
+
+            //Act
+            customList.Remove(3);
+            actual = customList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
