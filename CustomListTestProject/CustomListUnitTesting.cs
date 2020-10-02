@@ -155,7 +155,7 @@ namespace CustomListTestProject
         }
 
         [TestMethod]
-        public void Remove_OneNumberFromList_Value2ToMoveToIndex0() 
+        public void Remove_OneNumber_ZeroIndexShouldBeOne() 
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
@@ -191,7 +191,7 @@ namespace CustomListTestProject
             //Act
             customList.Remove(value1);
             customList.Remove(value2);
-            actual = customList[1];
+            actual = customList[0];
 
             //Assert
             Assert.AreEqual(expected, actual);

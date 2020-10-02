@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -63,18 +64,14 @@ namespace CustomClassListT
 
         public void Remove(T item)
         {
-            //for (int i = 0; i < customList.Length; i++)
-            //{
-                //if(customList[i] == )
-                //{
-
-                //}
-
-            //}
-            customList[Count - 1] = item;
-            count--;
-            CheckCapacity();
-
+            for (int i = 0; i < customList.Length; i++)
+            {
+                if(customList[i].Equals(item))
+                {
+                    customList[i] = customList[i + 1];
+                    count--;
+                }
+            }     
         }
 
         private void CheckCapacity()
@@ -90,10 +87,7 @@ namespace CustomClassListT
             {
                 customList = new T[capacity *= 2]; 
             }
-            //else if(capacity > 5)
-            //{
-                //customList = new T[capacity]; 
-            //}
+
         }
 
     }
