@@ -75,20 +75,18 @@ namespace CustomClassListT
             }     
         }
 
-        private void CheckCapacity()
+        private void CheckCapacity() 
         {
-            if (capacity == Count)
+            if (capacity == count)
             {
                 T[] tempList = new T[capacity * 2];
           
-
                 for (int i = 0; i < count; i++)
                 {  
                     tempList[i] = customList[i];
                 }
-                customList = tempList; 
-                
-            }  
+                customList = tempList;    
+            }
         }
 
         public override string ToString()
@@ -113,36 +111,36 @@ namespace CustomClassListT
 
         public static CustomList<T> operator +(CustomList<T> firstList, CustomList<T> secondList)
         {
-            CustomList<T> tempList = new CustomList<T>(); //Temp to hold 1/2
+            CustomList<T> tempList = new CustomList<T>(); 
 
-            for (int i = 0; i < firstList.count; i++)//iterate through first list 
+            for (int i = 0; i < firstList.count; i++)
             {
-                tempList.Add(firstList[i]); //add each index to temp list as it loops 
+                tempList.Add(firstList[i]); 
             }
-            for (int i = 0; i < secondList.count; i++)//iterate through second list 
+            for (int i = 0; i < secondList.count; i++)
             {
-                tempList.Add(secondList[i]);//add each indec to temp list as it loops 
+                tempList.Add(secondList[i]);
             }
-            return tempList;//return temp list (firstList + secondList)
+            return tempList;
         }
 
         public static CustomList<T> operator -(CustomList<T> firstList, CustomList<T> secondList)
         {
-            CustomList<T> tempList = new CustomList<T>(); //Temp to hold 1/2
+            CustomList<T> tempList = new CustomList<T>(); 
 
-            for (var i = 0; i < firstList.count; i++) //iterate through first list 
+            for (var i = 0; i < firstList.count; i++) 
             {
-                tempList.Add(firstList[i]);//add first list to temp list 
+                tempList.Add(firstList[i]);
 
-                for (var j = 0; j < secondList.count; j++)//iterate through secondList
+                for (var j = 0; j < secondList.count; j++)
                 {
-                    if (firstList[i].Equals(secondList[j]))//Compare each index of the firstList and secondList for equal
+                    if (firstList[i].Equals(secondList[j]))
                     {
-                        tempList.Remove(secondList[j]);//remove all that are equal 
+                        tempList.Remove(secondList[j]);
                     }
                 }
             }
-            return tempList;//return tempList with firstList - secondList
+            return tempList;
         }
 
         public static CustomList<int> Zip(CustomList<int> one, CustomList<int> two)
@@ -153,14 +151,11 @@ namespace CustomClassListT
             {
                 counter = two.count;
             }
-            
-
-            for (int i = 0; i < counter; i++)//has to be if/ese to decide is one.count or two.count is larger 
+            for (int i = 0; i < counter; i++)
             {
                 if(one.count > i)
                 {
                     result.Add(one[i]);
-
                 }
                 if(one.count < two.count)
                 {
@@ -169,12 +164,6 @@ namespace CustomClassListT
             }
             return result;
         }
-
-      
-
-
-
-
 
     }
 }
