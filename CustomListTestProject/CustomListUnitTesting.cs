@@ -237,5 +237,9 @@ namespace CustomListTestProject
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        //create list
+        //add values
+        //for each through values
+        //in each iteration, add value to string
     }
 }
