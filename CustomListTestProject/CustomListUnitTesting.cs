@@ -237,9 +237,112 @@ namespace CustomListTestProject
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        //create list
-        //add values
-        //for each through values
-        //in each iteration, add value to string
+        
+        // Overload - Tests:
+
+        [TestMethod]
+        public void OverLoadRemove_TakeInTwoLists_ReturnFirstListAndSecondList()
+        {
+            //Arrange
+            CustomList<int> firstList = new CustomList<int>();
+            int valueOne = 1;
+            int valueTwo = 3;
+            int valueThree = 5;
+            int value1 = 2;
+            int value2 = 4;
+            int value3 = 6;
+          
+            CustomList<int> secondList = new CustomList<int>();
+           
+
+            CustomList<int> temp = new CustomList<int>(); 
+
+            string expected = "135246";
+            string actual;
+
+            //Act
+            firstList.Add(valueOne);
+            firstList.Add(valueTwo);
+            firstList.Add(valueThree);
+            secondList.Add(value1);
+            secondList.Add(value2);
+            secondList.Add(value3);
+
+            temp = firstList + secondList;
+            actual = temp.ToString();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        // CheckCapacity Tests:
+
+        [TestMethod]
+        public void CheckCapacity_TakeInListOfThree_CapacityShouldBeFour()
+        {
+            //Arrange
+
+
+
+            //Act
+
+
+
+
+
+
+
+            //Assert
+
+        }
+
+        [TestMethod]
+        public void CheckCapacity_TakeInListOfFive_CapacityShouldBeDoubledToEight()
+        {
+            //Arrange
+
+
+
+            //Act
+
+
+
+
+
+
+
+            //Assert
+
+        }
+
+        [TestMethod]
+        public void CheckCapacity_TakeInListOfEight_CapacityShouldBeDoubledToSixteen()
+        {
+            //Arrange
+
+
+
+            //Act
+
+
+
+
+
+
+
+            //Assert
+
+        }
+
+
+
+
+        //to test
+        // CustomList<int> charlesIsTHEBest = new CustomList<int>();//give values to this list
+        // CustomList<int> charlesIsTHEBestAswell = new CustomList<int>();//give values to this list
+        //CustomList<int> finalList = new CustomList<int>();//left blank
+        //finalList = finalList.Zip(charlesIsTHEBest, charlesIsTHEBestAswell);
+
     }
 }

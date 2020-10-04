@@ -65,7 +65,7 @@ namespace CustomClassListT
 
         public void Remove(T item)
         {
-            for (int i = 0; i < customList.Length; i++)
+            for (int i = 0; i < count; i++)
             {
                 if(customList[i].Equals(item))
                 {
@@ -77,18 +77,18 @@ namespace CustomClassListT
 
         private void CheckCapacity()
         {
-            T[] tempList = new T[capacity];
-
-            for (int i = 0; i < customList.Length; i++)
-            {
-                tempList[i] = customList[i];
-            }
-
             if (capacity == Count)
             {
-                customList = new T[capacity *= 2]; 
-            }
+                T[] tempList = new T[capacity * 2];
+          
 
+                for (int i = 0; i < count; i++)
+                {  
+                    tempList[i] = customList[i];
+                }
+                customList = tempList; 
+                
+            }  
         }
 
         public override string ToString()
@@ -115,60 +115,66 @@ namespace CustomClassListT
         {
             CustomList<T> tempList = new CustomList<T>(); //Temp to hold 1/2
 
-            for (int i = 0; i < firstList.count; i++)
+            for (int i = 0; i < firstList.count; i++)//iterate through first list 
             {
-                tempList.Add(firstList[i]);
+                tempList.Add(firstList[i]); //add each index to temp list as it loops 
             }
-            for (int i = 0; i < secondList.count; i++)
+            for (int i = 0; i < secondList.count; i++)//iterate through second list 
             {
-                tempList.Add(secondList[i]);
+                tempList.Add(secondList[i]);//add each indec to temp list as it loops 
             }
-            return tempList;
+            return tempList;//return temp list (firstList + secondList)
         }
 
         public static CustomList<T> operator -(CustomList<T> firstList, CustomList<T> secondList)
         {
             CustomList<T> tempList = new CustomList<T>(); //Temp to hold 1/2
 
-            for (var i = 0; i < firstList.count; i++)
+            for (var i = 0; i < firstList.count; i++) //iterate through first list 
             {
-                tempList.Add(firstList[i]);
+                tempList.Add(firstList[i]);//add first list to temp list 
 
-                for (var j = 0; j < secondList.count; j++)
+                for (var j = 0; j < secondList.count; j++)//iterate through secondList
                 {
-                    if (firstList[i].Equals(secondList[j]))
+                    if (firstList[i].Equals(secondList[j]))//Compare each index of the firstList and secondList for equal
                     {
-                        tempList.Remove(secondList[j]);
+                        tempList.Remove(secondList[j]);//remove all that are equal 
                     }
                 }
             }
-            return tempList;
+            return tempList;//return tempList with firstList - secondList
         }
-
-
-
-
-
-
 
         public static CustomList<int> Zip(CustomList<int> one, CustomList<int> two)
         {
             CustomList<int> result = new CustomList<int>();
-
-            for (int i = 0; i < one.Count; i++)
+            int counter = one.count;
+            if (counter < two.count)
             {
-                result.Add(one[i]);
-                result.Add(two[i]);
-
+                counter = two.count;
             }
+            
+
+            for (int i = 0; i < counter; i++)//has to be if/ese to decide is one.count or two.count is larger 
+            {
+                if(one.count > i)
+                {
+                    result.Add(one[i]);
+
+                }
+                if(one.count < two.count)
+                {
+                    result.Add(two[i]);
+                } 
+            }
+            return result;
+        }
+
+      
 
 
-            //to test
-            CustomList<int> charlesIsTHEBest = new CustomList<int>();//give values to this list
-            CustomList<int> charlesIsTHEBestAswell = new CustomList<int>();//give values to this list
-            CustomList<int> finalList = new CustomList<int>();//left blank
-            finalList = finalList.Zip(charlesIsTHEBest, charlesIsTHEBestAswell);
 
-        } 
+
+
     }
 }
