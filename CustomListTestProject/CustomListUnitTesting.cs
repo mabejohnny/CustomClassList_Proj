@@ -391,7 +391,7 @@ namespace CustomListTestProject
             customListTwo.Add(valueTwo2);
             customListTwo.Add(valueThree3);
 
-            actual = final.Zip(customListOne, customListTwo);
+            actual = final.Zip.(customListOne, customListTwo);
 
             //Assert
             Assert.AreEqual(expected, actual);
