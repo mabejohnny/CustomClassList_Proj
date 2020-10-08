@@ -8,11 +8,20 @@ using System.Threading.Tasks;
 
 namespace CustomClassListT
 {
-    public class CustomList<T> : IEnumerable 
+    public class CustomList<T> : IEnumerable
     {
-        public int capacity;
+
+        private int capacity;
         private T[] customList;
         private int count;
+
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+        }
        
         public int Count
         {
